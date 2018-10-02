@@ -1,97 +1,80 @@
--- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.16  Distrib 10.1.34-MariaDB, for Win32 (AMD64)
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 25, 2018 at 11:47 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: test
+-- ------------------------------------------------------
+-- Server version	10.1.34-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `ms17`
---
-
--- --------------------------------------------------------
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `nimekiri`
 --
 
+DROP TABLE IF EXISTS `nimekiri`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `nimekiri` (
-  `id` int(3) NOT NULL,
+  `id` int(3) NOT NULL AUTO_INCREMENT,
   `EesNimi` varchar(30) NOT NULL,
   `PereNimi` varchar(30) NOT NULL,
   `id_code` char(11) DEFAULT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `nimekiri`
 --
 
-INSERT INTO `nimekiri` (`id`, `EesNimi`, `PereNimi`, `id_code`, `time`) VALUES
-(2, 'Tarmo', 'Teder', '35404211234', '2018-09-11 11:01:26'),
-(13, 'Endel', 'EesvÃ¤rav', '32132231234', '2018-09-18 12:01:31'),
-(14, 'Endel', 'EesvÃ¤rav', '32132231234', '2018-09-18 12:01:36');
-
--- --------------------------------------------------------
+LOCK TABLES `nimekiri` WRITE;
+/*!40000 ALTER TABLE `nimekiri` DISABLE KEYS */;
+INSERT INTO `nimekiri` VALUES (2,'Tarmo','Teder','35404211234','2018-09-11 11:01:26'),(13,'Endel','EesvÃ¤rav','32132231234','2018-09-18 12:01:31'),(14,'Endel','EesvÃ¤rav','32132231234','2018-09-18 12:01:36');
+/*!40000 ALTER TABLE `nimekiri` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `nimekiri1`
 --
 
+DROP TABLE IF EXISTS `nimekiri1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `nimekiri1` (
-  `id` int(3) NOT NULL,
+  `id` int(3) NOT NULL AUTO_INCREMENT,
   `EesNimi` varchar(30) NOT NULL,
   `PereNimi` varchar(30) NOT NULL,
   `id_code` char(11) DEFAULT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `nimekiri1`
 --
 
---
--- Indexes for table `nimekiri`
---
-ALTER TABLE `nimekiri`
-  ADD PRIMARY KEY (`id`);
+LOCK TABLES `nimekiri1` WRITE;
+/*!40000 ALTER TABLE `nimekiri1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nimekiri1` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indexes for table `nimekiri1`
---
-ALTER TABLE `nimekiri1`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `nimekiri`
---
-ALTER TABLE `nimekiri`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `nimekiri1`
---
-ALTER TABLE `nimekiri1`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-10-02 13:13:41
