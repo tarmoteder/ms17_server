@@ -17,6 +17,20 @@ $serv = array ('host' => "localhost",'pass' => "", 'user' => "root");
 <p><a href="db_pdo.php">PDO DB</a></p>
 
 <h2>Failioperatsioonid</h2>
-<p><a href="file.php">Faili kirjutamine ja lugemine</a></p>
+<p><a href="input.php">Faili kirjutamine ja lugemine</a></p>
+
+<form action="" method="post">
+    <h3>Teksti sisestamine faili ja sealt uuesti lugemine</h3>
+    <ul>
+        <li>
+        <label for="txt" >Sisestage tekst</label>
+        <input type="password" name="txt" maxlength="5" required>
+        </li>
+        <li>
+        <?php  ?>
+        </li>
+    </ul>
+</form>
+
 
 <?php counter(); ?>
