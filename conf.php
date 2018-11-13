@@ -11,7 +11,17 @@ function go_home() {
     
 }
 
+function db_connect($srv, $usr, $psw){
+    
+    // Ühenduse tegemine protseduuriga
 
+    $conn = mysqli_connect($srv,$usr,$psw);
+
+    if (!$conn) {
+        die("<p>Ühendusega on halvasti ".mysqli_connect_error."</p>");
+    }
+    echo "<p>Ühendus protseduuriga on olemas!";
+}
 
 ?>
 
