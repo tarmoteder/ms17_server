@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 // include('../conf.php');
 
  $conn = mysqli_connect('localhost','root','');
@@ -14,8 +15,13 @@ if (isset($_POST['sisesta'])){
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     
+    
+    
     if($row){
-        echo "Teie sisselogimine õnnestus!";
+        $_SESSION['kasutaja']=$user;
+        header("Location:thanks.php");
+        // var_dump($_SESSION);
+        
     } else { echo "Sisselogimine ei õnnestunud, kontrollige kasutajanime ja/või salasõna";}
 }
 
