@@ -9,7 +9,7 @@ session_start();
 
 if (isset($_POST['sisesta'])){
     $user = $_POST['kasutaja'];
-    $pass = $_POST['parool'];
+    $pass = md5($_POST['parool']);
     
     $sql="SELECT * FROM ms17.users WHERE username='$user' AND passw0rd ='$pass'";
     $result = mysqli_query($conn, $sql);
@@ -17,10 +17,12 @@ if (isset($_POST['sisesta'])){
     
     
     
+    
+    
     if($row){
         $_SESSION['kasutaja']=$user;
         header("Location:thanks.php");
-        // var_dump($_SESSION);
+        
         
     } else { echo "Sisselogimine ei õnnestunud, kontrollige kasutajanime ja/või salasõna";}
 }

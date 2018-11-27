@@ -1,21 +1,13 @@
 <?php
 
-session_start();
+include ('functions.php');
 
-$conn = mysqli_connect('localhost','root','');
-
-$check_user=$_SESSION["kasutaja"];
-
-$sql = $sql="SELECT * FROM ms17.users WHERE username='$check_user';
-
-$result = mysqli_query($conn, $sql);
-$user = mysqli_fetch_array($result);
-
-
+check_user();
 
 echo "Tänan sisestuse eest<br>";
 echo "Olete sisselogitud";
 
-
-
 ?>
+
+<a href="logout.php">Logi välja</a>
+     

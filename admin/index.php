@@ -1,5 +1,11 @@
 <?php
 
+// echo hash('sha384', 'Passw0rd');
+
+
+
+
+
 include('login.php');
 
 ?>
