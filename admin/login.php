@@ -9,7 +9,7 @@ session_start();
 
 if (isset($_POST['sisesta'])){
     $user = $_POST['kasutaja'];
-    $pass = md5($_POST['parool']);
+    $pass = hash('md5',$_POST['parool']);
     
     $sql="SELECT * FROM ms17.users WHERE username='$user' AND passw0rd ='$pass'";
     $result = mysqli_query($conn, $sql);
